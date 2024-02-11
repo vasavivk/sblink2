@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Play Files</title>
+    <title>Stream Files</title>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Straming TG Files made by Zoro" />
     <meta http-equiv="X-Frame-Options" content="deny">
-
+    <link rel="icon" type="image/png" href="luffy.png">
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -139,7 +140,7 @@
             event.stopPropagation();
             if (navigator.share) {
               navigator.share({
-                title: ftitle,
+                text: ftitle,
                 url: mediaLink
               });
             }
