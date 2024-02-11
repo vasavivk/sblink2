@@ -111,7 +111,8 @@
       });
 
       var mediaLink = "{{ mediaLink }}";
-      var ftitle = "{{ ftitle }}";
+      var ftitlem = "{{ ftitle }}";
+      var ftitle = ftitlem.concat("  ~ Katta");
       document.title = ftitle ;
       if (mediaLink) {
           document.querySelector('#stream-media source').setAttribute('src', mediaLink);
