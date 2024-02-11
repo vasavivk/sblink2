@@ -74,9 +74,10 @@ async def transmit_file(file_id):
 
 @bp.route('/stream/<int:file_id>')
 async def stream_file(file_id):
+    file = await get_message(message_id=int(file_id)) or abort(404)
     code = request.args.get('code') or abort(401)
-
-    return await render_template('player.html', mediaLink=f'{Server.BASE_URL}/dl/{file_id}?code={code}')
+    file_name, _, _ = get_file_properties(file)
+    return await render_template('player.html', mediaLink=f'{Server.BASE_URL}/dl/{file_id}?code={code}', ftitle=file_name)
 
 @bp.route('/file/<int:file_id>')
 async def file_deeplink(file_id):
